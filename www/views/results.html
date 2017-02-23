@@ -1,0 +1,29 @@
+<div class="tekstblok">
+  <h1>Resultaten</h1>
+  <h2>Melodische gedeelte van de test:</h2>
+  <h3>Aantal goed: {{amountCorrectMelody.number}}/{{amountoftrials}} ({{amountCorrectMelody.percentage | number:0}}%)</h3>
+  <ul>
+    <li ng-class="{'correct': resultaat == correctAnswersMelody[key], 'incorrect': resultaat != correctAnswersMelody[key]}" ng-repeat="(key, resultaat) in results.melody track by $index">
+      <b>{{$index}}:</b>
+      <span ng-show="resultaat == 'same'">Hetzelfde</span>
+      <span ng-show="resultaat == 'different'">Verschillend</span>
+    </li>
+  </ul>
+  <hr/>
+  <h2>Ritmische gedeelte van de test:</h2>
+  <h3>Aantal goed: {{amountCorrectRhythm.number}}/{{amountoftrials}} ({{amountCorrectRhythm.percentage | number:0}}%)</h3>
+  <ul>
+    <li ng-class="{'correct': resultaat == correctAnswersRhythm[key], 'incorrect': resultaat != correctAnswersRhythm[key]}" ng-repeat="(key, resultaat) in results.rhythm track by $index">
+      <b>{{$index}}:</b>
+      <span ng-show="resultaat == 'same'">Hetzelfde</span>
+      <span ng-show="resultaat == 'different'">Verschillend</span>
+    </li>
+  </ul>
+
+  <hr/>
+
+  <p>Dank u wel voor het meedoen aan ons test!</p>
+
+  <p>This test is part of a music cognition research project at University of Amsterdam (Makiko Sadakata & Paula Roncaglia-Denissen), in collaboration with Mikel Wallentin (contact: <a href="mailto:m.p.roncaglia@uva.nl" target="_blank">m.p.roncaglia@uva.nl</a>). Website designed and created by <a href="http://www.drikusroor.nl/" target="_blank">Drikus Roor</a></p>
+
+</div>

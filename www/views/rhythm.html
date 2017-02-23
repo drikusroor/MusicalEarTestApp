@@ -1,0 +1,36 @@
+<div class="tekstblok text-center">
+  <h1>Ritmisch gedeelte van de test</h2>
+  <h2>Opgave {{trial}}<h2>
+</div>
+
+<audio ng-hide="true" id="{{trial}}" class="audioelement" controls ui-event="{ ended : 'showRadio()'}">
+  <source src="{{filename}}" type="audio/mp3" />
+</audio>
+
+<div ng-hide="hideAudio == true" class="surveyquestion radiobuttons">
+  <ul class="button-group">
+    <button class="button button-experiment" ng-click="playAudio()">Speel fragment</button>
+  </ul>
+</div>
+
+<div ng-show="showRadio == true" class="surveyquestion radiobuttons">
+  <ul class="button-group">
+    <li><a class="button button-experiment" ng-click="addRhythmAnswer(trial, 'same')">Hetzelfde</a></li>
+    <li><a class="button button-experiment" ng-click="addRhythmAnswer(trial, 'different')">Verschillend</a></li>
+  </ul>
+</div>
+
+<!-- <div ng-if="showNextButton == true" class="surveyquestion radiobuttons">
+  <ul class="button-group">
+    <li>
+      <button ng-if="0 < trial && trial < amountoftrials" ui-sref="rhythm({trial: nexttrial})">
+        Volgend fragment
+      </button>
+
+      <button ng-if="trial == amountoftrials" ui-sref="melodyinstructions">
+        Naar de melodische test
+      </button>
+
+    </li>
+  </ul>
+</div> -->

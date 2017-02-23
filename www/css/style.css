@@ -1,0 +1,150 @@
+html {
+  font-family: Cabin-Bold;
+  src: url(fonts/Cabin-Bold.otf); }
+
+body {
+  font-family: "Cabin-Bold", sans-serif;
+  margin: auto;
+  background-color: #FF6D00;
+  font-size: 15px;
+  color: #008CBA; }
+
+h1, h2, h3 {
+  color: #008CBA; }
+
+h1 {
+  font-size: 30px; }
+
+h2 {
+  font-size: 25px; }
+
+h3 {
+  font-size: 20px; }
+
+.exp-container {
+  margin: auto;
+  width: 90%;
+  max-width: 1000px;
+  min-height: 400px;
+  background: white;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+  padding-bottom: 100px; }
+  @media (max-width: 768px) {
+    .exp-container {
+      width: 100%; } }
+
+.tekstblok {
+  padding: 50px;
+  padding-top: 30px; }
+
+p {
+  line-height: 30px;
+  font-size: 15px; }
+
+.justify {
+  text-align: justify; }
+
+a {
+  color: #008CBA;
+  text-decoration: none; }
+
+a:hover {
+  color: #008CBA;
+  text-decoration: underline; }
+
+a:visited {
+  color: #008CBA; }
+
+li.correct {
+  background: #009D30; }
+
+li.incorrect {
+  background: #9D0200; }
+
+li.correct, li.incorrect {
+  padding: 10px;
+  color: white; }
+
+#survey {
+  width: 700px;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0px 0px 25px #000000;
+  border-radius: 0px 0px 25px 25px; }
+
+.prev {
+  position: absolute;
+  left: 10%; }
+
+.next {
+  position: absolute;
+  right: 10%; }
+
+#slide {
+  display: none; }
+
+#survey_container {
+  width: 100%;
+  height: 400px;
+  margin: auto; }
+
+.slide {
+  height: 100%;
+  margin: auto;
+  display: block;
+  overflow: show; }
+
+.surveyquestion {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 25px;
+  margin-top: 25px; }
+  .surveyquestion .button-group > li {
+    margin: 0 10px; }
+
+.surveyquestion b {
+  margin: auto; }
+
+.keyalignleft {
+  float: left; }
+
+.navigationbuttons {
+  position: absolute;
+  bottom: 20px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  margin: auto;
+  display: table; }
+
+.navigationbuttons a {
+  display: table-cell;
+  text-align: center;
+  width: 50%;
+  vertical-align: middle;
+  color: white;
+  background-color: #008CBA; }
+
+.questiondiv {
+  height: 100%; }
+
+audio {
+  display: table-cell;
+  margin: auto;
+  padding-top: 100px; }
+
+.textfieldcenter {
+  margin: auto;
+  display: table; }
+
+#audioquestion {
+  min-height: 60px;
+  margin-top: 100px; }
+
+audio.trial {
+  display: none; }
+
+.surveyquestion#audioquestion {
+  text-align: center; }

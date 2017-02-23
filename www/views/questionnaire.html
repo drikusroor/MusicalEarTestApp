@@ -1,0 +1,147 @@
+<div class="tekstblok">
+
+  <h2>Vragenlijst over muziek- en taalachtergrond</h2>
+
+  <p>Na deze vragenlijst zie je hoe goed je de test hebt gedaan!
+
+  <h3>Muziekachtergrond: </h3>
+
+  <form>
+    <div class="row">
+      <label>
+        1)  Geboortedatum (dd-mm-jjjj)
+        <input type="text" ng-model="form.birthdate" ng-change="addQuestionnaireAnswer('birthdate', form.birthdate)">
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        2)  Geslacht
+        <input type="text" ng-model="form.sex" ng-change="addQuestionnaireAnswer('sex', form.sex)">
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        3)	Hoogst <b>afgeronde</b> opleiding:
+        <input type="text" ng-model="form.education" >
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        4)	Heeft u muzieklessen gevolgd?
+        <input type="text" ng-model="form.musiclessons" >
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        5)	Zoja, hoeveel jaren les heeft u gehad?
+        <input type="text" ng-model="form.yearsofmusiclessons" >
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        6)	Zoja, hoe oud was u toen u deze lessen heeft gehad?
+        <input type="text" ng-model="form.ageofmusiclessonsstart" >
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        7)	Bespeelt u een muziekinstrument?
+        <input type="text" ng-model="form.playmusicalinstrumentyesno" >
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        8)	Zoja, welke?
+        <input type="text" ng-model="form.whichmusicalinstrument" >
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        9)	Heeft u danslessen gevolgd?
+        <input type="text" ng-model="form.followdancelessonsyesno" >
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        10) Zoja, hoeveel jaren les heeft u gehad?
+        <input type="text" ng-model="form.yearsofdancelessons" >
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        11)	Hoeveel uren luistert u gemiddeld per dag naar muziek?
+        <input type="text" ng-model="form.hoursperdaymusiclistening" >
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        12)	Welke muziekgenre luistert u graag?
+        <input type="text" ng-model="form.favoritemusicalgenre" >
+      </label>
+    </div>
+  </form>
+
+  <h3>Taalachtergrond: </h3>
+
+  <form>
+    <div class="row">
+      <label>
+        1)	Wat is uw moedertaal?
+        <input type="text" ng-model="form.nativelanguage" >
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        2)	Welke andere taal spreekt u vloeind naast uw moedertaal?
+        <input type="text" ng-model="form.otherfluentlanguage" >
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        3)	Hoe goed is uw vaardigheid in deze andere taal (talen) in vergelijking met je moedertaal?
+        <select ng-model="form.skilllevelotherfluentlanguage" >
+          <option value="" selected></option>
+          <option value="10">10: net zo goed als mijn moedertaal</option>
+          <option value="9">9: bijna net zo goed als mijn moedertaal</option>
+          <option value="8">8: heel goed maar minder goed dan mijn moedertaal</option>
+          <option value="7">7: vrij goed</option>
+          <option value="6">6: gemiddeld niveau</option>
+          <option value="5">5: gemiddeld niveau</option>
+          <option value="4">4: beginnersniveau</option>
+          <option value="3">3: beginnersniveau</option>
+          <option value="2">2: rudimentair</option>
+          <option value="1">1: rudimentair</option>
+        </select>
+      </label>
+    </div>
+    <div class="row" ng-model="form.ageotherfluentlanguage" >
+      <label>
+        4)	Hoe oud was u toen u deze andere taal (talen) geleerd heeft?
+        <input type="text">
+      </label>
+    </div>
+    <div class="row" ng-model="form.howoftenperweekusingnativelanguage" >
+      <label>
+        5)	Hoe vaak per week gebruikt u uw moedertaal?
+        <input type="text">
+      </label>
+    </div>
+    <div class="row" ng-model="form.howoftenperweekusingotherfluentlanguage" >
+      <label>
+        6)	Hoe vaak per week gebruikt u deze andere taal (talen)?
+        <input type="text">
+      </label>
+    </div>
+  </form>
+
+  <div class="surveyquestion radiobuttons">
+    <ul class="button-group">
+      <li>
+        <button class="" ng-click="postResults(results)">
+          Ga naar de resultaten
+        </button>
+      </li>
+    </ul>
+  </div>
+
+</div>
