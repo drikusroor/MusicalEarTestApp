@@ -28,7 +28,7 @@ bower_components
 www/lib
 
 # Javascript bundle folder
-www/js
+www/jse
 
 # node-waf configuration
 .lock-wscript
