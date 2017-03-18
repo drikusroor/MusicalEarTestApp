@@ -45,14 +45,15 @@ gulp.task('sass', function () {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src([
-    './www/app.js',
-		'./www/services/*.js',
-		'./www/filters/*.js',
-		'./www/directives/*.js',
-		'./www/controllers/*.js'
+  // return gulp.src([
+  //   './www/app.js',
+	// 	'./www/services/*.js',
+	// 	'./www/filters/*.js',
+	// 	'./www/directives/*.js',
+	// 	'./www/controllers/*.js'
 
-	])
+	// ])
+  return gulp.src([sourcePath + 'app.js', sourcePath + '**/*/*.js'])
     .pipe(concat('bundle.js'))
 	//.pipe(gulpMinify())
     .pipe(gulp.dest(buildPath))
