@@ -8,51 +8,44 @@ var gulpMinify = require('gulp-minify');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var runSequence = require('gulp-run-sequence');
+
+var mainBowerFiles = require('gulp-main-bower-files');
+var clean = require('gulp-clean');
+var jshint = require('gulp-jshint');
+var gulpFilter = require('gulp-filter');
 
 var paths = {
   sass: ['./scss/**/*.scss'],
+  audio: ['./**/*.{mp3,wav}'],
   js: ['./www/**/*.js', '!./www/js/*.js'],
   html: ['./www/**/*.html']
 };
 
+var sourcePath = './www/';
+var buildPath = './dist/';
+
+gulp.task('clean', function () {
+    return gulp.src('./dist', {read: false})
+        .pipe(clean({force: true}));
+});
+
+
 gulp.task('connect', function() {
   connect.server({
-    root: 'www',
+    root: 'dist',
     livereload: true
   });
 });
 
-gulp.task('sass', function(done) {
-  gulp.src('./scss/style.scss')
-    .pipe(sass())
-    .on('error', sass.logError)
-    .pipe(gulp.dest('./www/css/'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
-    .on('end', done)
-	.pipe(connect.reload());
+gulp.task('sass', function () {
+  return gulp.src(sourcePath + './scss/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(buildPath + './assets/style'));
 });
 
 gulp.task('scripts', function() {
   return gulp.src([
-		'./www/lib/angular/angular.min.js',
-    './www/lib/angular-route/angular-route.min.js',
-		'./www/lib/angular-animate/angular-animate.min.js',
-		'./www/lib/angular-sanitize/angular-sanitize.min.js',
-		'./www/lib/angular-ui-router/release/angular-ui-router.min.js',
-
-		'./www/lib/angular-dynamic-locale/src/tmhDynamicLocale.js',
-		'./www/lib/angular-translate/angular-translate.min.js',
-		'./www/lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
-
-		'./www/lib/angular-resource/angular-resource.js',
-		'./www/lib/angular-base64/angular-base64.min.js',
-		'./www/lib/angular-filter/dist/angular-filters.min.js',
-    './www/lib/jquery/dist/jquery.js',
-    './www/lib/angular-ui-event/dist/event.js',
     './www/app.js',
 		'./www/services/*.js',
 		'./www/filters/*.js',
@@ -60,14 +53,37 @@ gulp.task('scripts', function() {
 		'./www/controllers/*.js'
 
 	])
-    .pipe(concat('all.js'))
+    .pipe(concat('bundle.js'))
 	//.pipe(gulpMinify())
-    .pipe(gulp.dest('./www/js'))
+    .pipe(gulp.dest(buildPath))
 	.pipe(connect.reload());
 });
 
+
+
+gulp.task('main-bower-files', function() {
+    var jsFilter = gulpFilter('**/*/*.js', { restore: true });
+    var cssFilter = gulpFilter('**/*/*.css')
+    return gulp.src('./bower.json')
+        .pipe(mainBowerFiles())
+        .pipe(jsFilter)
+        .pipe(concat('vendor.js'))
+        .pipe(gulpMinify())
+        .pipe(gulp.dest(buildPath + 'libs'))
+        .pipe(jsFilter.restore)
+        .pipe(cssFilter)
+        .pipe(gulp.dest(buildPath + 'assets/style/'))
+});
+
+gulp.task('audio', function() {
+  gulp.src(sourcePath + paths.audio)
+    .pipe(gulp.dest(buildPath))
+    .pipe(connect.reload());
+})
+
 gulp.task('html', function () {
   gulp.src('./www/**/*.html')
+    .pipe(gulp.dest(buildPath))
     .pipe(connect.reload());
 });
 
@@ -77,7 +93,9 @@ gulp.task('watch', function() {
   gulp.watch(paths.html, ['html']);
 });
 
-gulp.task('default', ['connect', 'sass', 'scripts', 'html', 'watch']);
+gulp.task('default', function(cb){
+  runSequence('clean', ['connect', 'sass', 'scripts', 'html', 'audio', 'main-bower-files'], 'watch');
+})
 
 gulp.task('install', ['git-check'], function() {
   return bower.commands.install()
