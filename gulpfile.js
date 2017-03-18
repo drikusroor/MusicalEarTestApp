@@ -9,6 +9,7 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 var runSequence = require('gulp-run-sequence');
+var ts = require('gulp-typescript');
 
 var mainBowerFiles = require('gulp-main-bower-files');
 var clean = require('gulp-clean');
@@ -19,6 +20,7 @@ var paths = {
   sass: ['./scss/**/*.scss'],
   audio: ['./**/*.{mp3,wav}'],
   js: ['./www/**/*.js', '!./www/js/*.js'],
+  ts: ['./www/**/*.ts'],
   html: ['./www/**/*.html']
 };
 
@@ -60,6 +62,14 @@ gulp.task('scripts', function() {
 	.pipe(connect.reload());
 });
 
+gulp.task('ts', function () {
+    return gulp.src( sourcePath + '/**/*.ts')
+        .pipe(ts({
+            noImplicitAny: true,
+            out: 'bundle.js'
+        }))
+        .pipe(gulp.dest(buildPath));
+});
 
 
 gulp.task('main-bower-files', function() {
@@ -90,12 +100,12 @@ gulp.task('html', function () {
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
-  gulp.watch(paths.js, ['scripts']);
+  gulp.watch(paths.ts, ['ts']);
   gulp.watch(paths.html, ['html']);
 });
 
 gulp.task('default', function(cb){
-  runSequence('clean', ['connect', 'sass', 'scripts', 'html', 'audio', 'main-bower-files'], 'watch');
+  runSequence('clean', ['connect', 'sass', 'ts', 'html', 'audio', 'main-bower-files'], 'watch');
 })
 
 gulp.task('install', ['git-check'], function() {
