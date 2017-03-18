@@ -15,41 +15,41 @@ $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('main', {
       url: '/',
-      templateUrl: 'views/intro.html',
+      templateUrl: 'components/introduction/intro.html',
     })
     .state('consent', {
       url: '/consent',
-      templateUrl: 'views/consent.html',
+      templateUrl: 'components/consent/consent.html',
     })
     .state('rhythminstructions', {
       url: '/rhythminstructions',
-      templateUrl: 'views/rhythminstructions.html',
+      templateUrl: 'components/rhythm/rhythminstructions.html',
     })
     .state('rhythm', {
       url: '/rhythm/:trial',
-      templateUrl: 'views/rhythm.html',
+      templateUrl: 'components/rhythm/rhythm.html',
       controller: 'RhythmCtrl'
     })
     .state('melodyinstructions', {
       url: '/melodyinstructions',
-      templateUrl: 'views/melodyinstructions.html',
+      templateUrl: 'components/melody/melodyinstructions.html',
     })
     .state('melody', {
       url: '/melody/:trial',
-      templateUrl: 'views/melody.html',
+      templateUrl: 'components/melody/melody.html',
       controller: 'MelodyCtrl'
     })
     .state('testfinished', {
       url: '/testfinished',
-      templateUrl: 'views/testfinished.html',
+      templateUrl: 'components/test-finished/testfinished.html',
     })
     .state('questionnaire', {
       url: '/questionnaire',
-      templateUrl: 'views/questionnaire.html',
+      templateUrl: 'components/questionnaire/questionnaire.html',
       controller: 'QuestionnaireCtrl'
     })
     .state('results', {
       url: '/results',
-      templateUrl: 'views/results.html',
+      templateUrl: 'components/results/results.html',
     })
 }]);
