@@ -26,6 +26,7 @@ coverage
 # Bower dependency directory (https://bower.io/)
 bower_components
 www/lib
+dist
 
 # Javascript bundle folder
 www/jse
