@@ -1,7 +1,7 @@
 'use strict';
 angular.module('ExperimentApp')
 
-.controller('MainCtrl', ['$scope', '$rootScope', '$resource', '$state', '$window', 'CORRECT_ANSWERS_MELODY', 'CORRECT_ANSWERS_RHYTHM', function ($scope, $rootScope, $resource, $state, $window, CORRECT_ANSWERS_MELODY, CORRECT_ANSWERS_RHYTHM) {
+.controller('MainCtrl', ['$scope', '$rootScope', '$resource', '$state', '$window', 'CORRECT_ANSWERS_MELODY', 'CORRECT_ANSWERS_RHYTHM', 'ConfigService', function ($scope, $rootScope, $resource, $state, $window, CORRECT_ANSWERS_MELODY, CORRECT_ANSWERS_RHYTHM, ConfigService) {
 
   $scope.detectmob = function() {
    if( navigator.userAgent.match(/Android/i)
@@ -48,6 +48,9 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
     melody: {},
     questionnaire: {}
   };
+
+  $scope.lang = ConfigService.language;
+  $scope.configService = ConfigService;
 
   $scope.addAnswer = function(test, answerobject){
     console.log(answerobject)

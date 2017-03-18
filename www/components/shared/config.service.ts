@@ -9,7 +9,7 @@ module ExperimentApp {
 
     )
     {
-      this.language = "Turkish";
+      this.language = "TR";
     }
 
     public setLanguage = (language):void => {
