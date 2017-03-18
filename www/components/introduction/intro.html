@@ -1,9 +1,23 @@
-<div class="tekstblok">
+<div class="tekstblok" ng-show="configService.language === 'TR'">
   <h1>Welkom bij de test</h1>
   <p>Je zult hier getest worden op je muzikale vaardigheden. Dit zal gebeuren in twee delen: Een deel waarin je wordt getest op je ritmische luistervaardigheid en een deel waarin je wordt getest op je melodische luistervaardigheid.</p>
   <p>Ten slotte zullen we je enkele vragen stellen over jouw muziek- en taalachtergrond. Na het invullen van deze korte vragenlijst krijg je vervolgens de resultaten van de test te zien.</p>
   <p>Ook willen we je vragen de pagina niet te verversen wanneer je een fragment niet goed hebt gehoord of een verkeerd antwoord hebt ingevuld. Dit kan er in resulteren dat er data verloren kan gaan.</p>
   <p>Veel succes!</p>
+</div>
+
+<div class="surveyquestion radiobuttons">
+  <ul class="button-group">
+    <li class="click" ng-click="configService.setLanguage('NL')">
+      <img src="assets/images/NL.png" />
+    </li>
+    <li class="click" ng-click="configService.setLanguage('TR')">
+      <img src="assets/images/TR.png" />
+    </li>
+    <!--<li>
+      <button ng-click="configService.setLanguage('TR')"><img src="assets/images/TR.png" /></button>
+    </li>-->
+  </ul>
 </div>
 
 <div class="surveyquestion radiobuttons">

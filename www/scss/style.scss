@@ -31,14 +31,16 @@ h3 {
   background: white;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: relative;
-  padding-bottom: 100px; }
+  padding-top: 50px;
+  padding-bottom: 50px; }
   @media (max-width: 768px) {
     .exp-container {
       width: 100%; } }
 
 .tekstblok {
   padding: 50px;
-  padding-top: 30px; }
+  // padding-top: 30px; 
+}
 
 p {
   line-height: 30px;
@@ -67,6 +69,10 @@ li.incorrect {
 li.correct, li.incorrect {
   padding: 10px;
   color: white; }
+
+.click {
+  cursor: pointer;
+}
 
 #survey {
   width: 700px;
