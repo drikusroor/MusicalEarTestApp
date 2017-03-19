@@ -14,9 +14,13 @@
 </div>
 
 <div ng-show="showRadio == true" class="surveyquestion radiobuttons">
-  <ul class="button-group">
+  <ul class="button-group" ng-show="configService.language === 'NL'">
     <li><a class="button button-experiment" ng-click="addMelodyAnswer(trial, 'same')">Hetzelfde</a></li>
     <li><a class="button button-experiment" ng-click="addMelodyAnswer(trial, 'different')">Verschillend</a></li>
+  </ul>
+  <ul class="button-group" ng-show="configService.language === 'TR'">
+    <li><a class="button button-experiment" ng-click="addMelodyAnswer(trial, 'same')">Ayn&#305;</a></li>
+    <li><a class="button button-experiment" ng-click="addMelodyAnswer(trial, 'different')">Farkl&#305;</a></li>
   </ul>
 </div>
 
