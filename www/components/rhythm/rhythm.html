@@ -1,6 +1,11 @@
-<div class="tekstblok text-center">
-  <h1>Ritmisch gedeelte van de test</h2>
+<div class="tekstblok text-center" ng-show="configService.language === 'NL'">
+  <h1>Ritmisch gedeelte van de test</h1>
   <h2>Opgave {{trial}}<h2>
+</div>
+
+<div class="tekstblok text-center" ng-show="configService.language === 'TR'">
+  <h1>Ritim B&ouml;l&uuml;m&uuml;:</h1>
+  <h2>Soru {{trial}}<h2>
 </div>
 
 <audio ng-hide="true" id="{{trial}}" class="audioelement" controls ui-event="{ ended : 'showRadio()'}">
@@ -14,9 +19,13 @@
 </div>
 
 <div ng-show="showRadio == true" class="surveyquestion radiobuttons">
-  <ul class="button-group">
+  <ul class="button-group" ng-show="configService.language === 'NL'">
     <li><a class="button button-experiment" ng-click="addRhythmAnswer(trial, 'same')">Hetzelfde</a></li>
     <li><a class="button button-experiment" ng-click="addRhythmAnswer(trial, 'different')">Verschillend</a></li>
+  </ul>
+  <ul class="button-group" ng-show="configService.language === 'TR'">
+    <li><a class="button button-experiment" ng-click="addRhythmAnswer(trial, 'same')">Ayn&#305;</a></li>
+    <li><a class="button button-experiment" ng-click="addRhythmAnswer(trial, 'different')">Farkl&#305;</a></li>
   </ul>
 </div>
 
