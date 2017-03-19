@@ -1,13 +1,24 @@
-<div class="tekstblok">
+<div class="tekstblok" ng-show="configService.language === 'NL'">
   <h1>Test afgerond!</h1>
   <p>Vul de vragenlijst in om jouw resultaten te kunnen zien.</p>
 </div>
 
+<div class="tekstblok text-center" ng-show="configService.language === 'TR'">
+  <h1>Test bitti!</h1>
+</div>
+
 <div class="surveyquestion radiobuttons">
-  <ul class="button-group">
+  <ul class="button-group"  ng-show="configService.language === 'NL'">
     <li>
       <button class="" ui-sref="questionnaire">
         Ga naar de vragenlijst
+      </button>
+    </li>
+  </ul>
+  <ul class="button-group"  ng-show="configService.language === 'TR'">
+    <li>
+      <button class="" ng-click="postResults(results)">
+        Sonuçlara git
       </button>
     </li>
   </ul>
