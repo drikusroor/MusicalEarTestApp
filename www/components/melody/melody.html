@@ -1,7 +1,13 @@
-<div class="tekstblok text-center">
-  <h1>Melodisch gedeelte van de test</h2>
+<div class="tekstblok text-center" ng-show="configService.language === 'NL'">
+  <h1>Melodisch gedeelte van de test</h1>
   <h2>Opgave {{trial}}<h2>
 </div>
+
+<div class="tekstblok text-center" ng-show="configService.language === 'TR'">
+  <h1>Melodi B&ouml;l&uuml;m&uuml;:</h1>
+  <h2>Soru {{trial}}<h2>
+</div>
+
 
 <audio ng-hide="true" id="{{trial}}" class="audioelement" controls ui-event="{ ended : 'showRadio()'}">
   <source src="{{filename}}" type="audio/mp3" />
