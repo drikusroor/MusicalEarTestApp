@@ -32,7 +32,11 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
     $scope.isMobile = isMobile;
 
   // FOr testing purposes
-  $scope.amountoftrials = 52;
+  $scope.amountoftrials = ConfigService.amountOfTrials;
+  if (!$scope.amountoftrials) {
+    console.log("ConfigService did not state amount of trials so amountoftrials will default to 52");
+    $scope.amountoftrials = 52;
+  }
   $scope.shouldWeSend = true  ;
 
   $scope.results = {
@@ -75,16 +79,23 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
       var ret = {};
       var len = arguments.length;
       for (var i=0; i<len; i++) {
-        for (p in arguments[i]) {
-          if (arguments[i].hasOwnProperty(p)) {
-            ret[p] = arguments[i][p];
+        if(arguments[i] !== undefined && arguments[i] !== null) {
+          for (let p in arguments[i]) {
+            if (arguments[i].hasOwnProperty(p)) {
+              ret[p] = String(arguments[i][p]);
+            }
           }
         }
       }
       return ret;
     }
 
-    data = collect(results.rhythm, results.melody, results.questionnaire);
+    let configObject = {
+      language: ConfigService.language,
+      amountOfTrials: ConfigService.amountOfTrials
+    }
+
+    data = collect(results.rhythm, results.melody, results.questionnaire, configObject);
 
     var currentdate = new Date(),
         datetime = "Last Sync: " + currentdate.getDate() + "/"

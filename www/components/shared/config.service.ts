@@ -3,6 +3,7 @@ module ExperimentApp {
 
   export class ConfigService {
     language: string;
+    amountOfTrials: number;
 
     static $inject = [];
     constructor(
@@ -10,6 +11,7 @@ module ExperimentApp {
     )
     {
       this.language = "TR";
+      this.amountOfTrials = 52;
     }
 
     public setLanguage = (language):void => {
