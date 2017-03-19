@@ -13,8 +13,11 @@
 </audio>
 
 <div ng-hide="hideAudio == true" class="surveyquestion radiobuttons">
-  <ul class="button-group">
-    <button class="button button-experiment" ng-click="playAudio()">Speel fragment</button>
+  <ul class="button-group" ng-show="configService.language === 'NL'">
+    <button class="button button-experiment " ng-click="playAudio()">Speel fragment</button>
+  </ul>
+  <ul class="button-group" ng-show="configService.language === 'TR'">
+    <button class="button button-experiment " ng-click="playAudio()">Dinlemek için tıklayın</button>
   </ul>
 </div>
 
