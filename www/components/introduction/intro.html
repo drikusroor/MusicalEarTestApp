@@ -9,10 +9,10 @@
 <div class="surveyquestion radiobuttons">
   <ul class="button-group">
     <li class="click" ng-click="configService.setLanguage('NL')">
-      <img src="assets/images/NL.png" />
+      <img ng-class="{'lang-selected': configService.language === 'NL'}" ng-src="assets/images/NL.png" />
     </li>
     <li class="click" ng-click="configService.setLanguage('TR')">
-      <img src="assets/images/TR.png" />
+      <img ng-class="{'lang-selected': configService.language === 'TR'}" ng-src="assets/images/TR.png" />
     </li>
   </ul>
 </div>

@@ -1,5 +1,8 @@
 @import 'foundation.min';
 
+$blue: #008CBA;
+$orange: #FF6D00;
+
 html {
   font-family: Cabin-Bold;
   src: url(fonts/Cabin-Bold.otf); }
@@ -7,12 +10,14 @@ html {
 body {
   font-family: "Cabin-Bold", sans-serif;
   margin: auto;
-  background-color: #FF6D00;
+  background-color: $orange;
   font-size: 15px;
-  color: #008CBA; }
+  color: $blue;
+  }
 
 h1, h2, h3 {
-  color: #008CBA; }
+  color: $blue; 
+}
 
 h1 {
   font-size: 30px; }
@@ -156,3 +161,7 @@ audio.trial {
 
 .surveyquestion#audioquestion {
   text-align: center; }
+
+.lang-selected {
+  border: 5px $blue solid;
+}
