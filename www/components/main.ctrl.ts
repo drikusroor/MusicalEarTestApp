@@ -50,8 +50,14 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
       // rhythm7: 'different',
     },
     melody: {},
-    questionnaire: {}
+    questionnaire: {
+      participantNumber: ""
+    }
   };
+
+  $scope.log = () => {
+    console.log($scope.results);
+  }
 
   $scope.lang = ConfigService.language;
   $scope.configService = ConfigService;

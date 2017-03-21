@@ -6,6 +6,17 @@
   <p>Veel succes!</p>
 </div>
 
+<div class="tekstblok">
+  <form>
+      <div class="row">
+        <label>
+          <h3>Participant number: </h3>
+          <input type="text" ng-model="results.questionnaire.participantNumber" ng-change="log()">
+        </label>
+      </div>
+  </form>
+</div>
+
 <div class="surveyquestion radiobuttons">
   <ul class="button-group">
     <li class="click" ng-click="configService.setLanguage('NL')">
