@@ -25,6 +25,14 @@ $urlRouterProvider.otherwise('/');
       url: '/rhythminstructions',
       templateUrl: 'components/rhythm/rhythminstructions.html',
     })
+    .state('rhythm-practice-1', {
+      url: '/rhythm-practice-1',
+      templateUrl: 'components/rhythm/practice/rhythm-practice-1.html',
+    })
+    .state('rhythm-practice-2', {
+      url: '/rhythm-practice-2',
+      templateUrl: 'components/rhythm/practice/rhythm-practice-2.html',
+    })
     .state('rhythm', {
       url: '/rhythm/:trial',
       templateUrl: 'components/rhythm/rhythm.html',

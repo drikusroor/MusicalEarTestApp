@@ -1,0 +1,28 @@
+<div class="tekstblok text-center" ng-show="configService.language === 'NL'">
+    <h1>Ritmisch gedeelte van de test</h1>
+    <h2>Oefenopgave 2</h2>
+    <p>De twee fragmenten zijn verschillend. Klik daarom op "Verschillend".</p>
+</div>
+
+<div class="tekstblok text-center" ng-show="configService.language === 'TR'">
+    <h1>Ritim B&ouml;l&uuml;m&uuml;:</h1>
+    <h2>Pratik Soru 2</h2>
+    <p>Bu ritimler aynı değildir. Siz "farklı" bir cevap vermelidir.</p>
+</div>
+
+<audio class="audioelement" controls ui-event="{ ended : 'showRadio()'}">
+  <source src="assets/audio/rhythm/Rhy_Ex02.mp3" type="audio/mp3" />
+</audio>
+
+<div class="surveyquestion radiobuttons">
+  <ul class="button-group">
+    <li>
+      <button class="" ui-sref="rhythm({trial: 1})" ng-show="lang == 'NL'">
+        Begin het ritmisch gedeelte van de test!
+      </button>
+      <button class="" ui-sref="rhythm({trial: 1})" ng-show="lang == 'TR'">
+        Teste başlayın
+      </button>
+    </li>
+  </ul>
+</div>
