@@ -11,7 +11,7 @@ module ExperimentApp {
     )
     {
       this.language = "TR";
-      this.amountOfTrials = 2;
+      this.amountOfTrials = 52;
     }
 
     public setLanguage = (language):void => {
