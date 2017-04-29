@@ -1,7 +1,7 @@
 'use strict';
 angular.module('ExperimentApp')
 
-.controller('QuestionnaireCtrl', ['$scope', '$rootScope', '$state', '$stateParams', function ($scope, $rootScope, $state, $stateParams) {
+.controller('QuestionnaireCtrl', ['$scope', '$rootScope', '$state', '$stateParams', 'QUESTIONS', function ($scope, $rootScope, $state, $stateParams, QUESTIONS) {
 
   $scope.form = {};
 
