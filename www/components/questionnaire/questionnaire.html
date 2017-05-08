@@ -22,78 +22,76 @@
     <div class="row">
       <label>
         {{ que.education || '3)	Hoogst afgeronde opleiding:' }}
-        <input type="text" ng-model="form.education" >
+        <input type="text" ng-model="form.education" ng-change="addQuestionnaireAnswer('education', form.education)">
       </label>
     </div>
     <div class="row">
       <label>
         {{ que.musiclessons || '4)	Heeft u muzieklessen gevolgd?' }}
-        <input type="text" ng-model="form.musiclessons" >
+        <input type="text" ng-model="form.musiclessons" ng-change="addQuestionnaireAnswer('musiclessons', form.musiclessons)">
       </label>
     </div>
     <div class="row">
       <label>
         {{ que.yearsofmusiclessons || '5)	Zoja, hoeveel jaren les heeft u gehad?' }}
-        <input type="text" ng-model="form.yearsofmusiclessons" >
+        <input type="text" ng-model="form.yearsofmusiclessons" ng-change="addQuestionnaireAnswer('yearsofmusiclessons', form.yearsofmusiclessons)">
       </label>
     </div>
     <div class="row">
       <label>
         {{ que.ageofmusiclessonsstart || '6)	Zoja, hoe oud was u toen u deze lessen heeft gehad?' }}
-        <input type="text" ng-model="form.ageofmusiclessonsstart" >
+        <input type="text" ng-model="form.ageofmusiclessonsstart" ng-change="addQuestionnaireAnswer('ageofmusiclessonsstart', form.ageofmusiclessonsstart)">
       </label>
     </div>
     <div class="row">
       <label>
         {{ que.playmusicalinstrumentyesno || '7)	Bespeelt u een muziekinstrument?' }}
-        <input type="text" ng-model="form.playmusicalinstrumentyesno" >
+        <input type="text" ng-model="form.playmusicalinstrumentyesno" ng-change="addQuestionnaireAnswer('playmusicalinstrumentyesno', form.playmusicalinstrumentyesno)">
       </label>
     </div>
     <div class="row">
       <label>
         {{ que.whichmusicalinstrument || '8)	Zoja, welke?' }}
-        <input type="text" ng-model="form.whichmusicalinstrument" >
+        <input type="text" ng-model="form.whichmusicalinstrument" ng-change="addQuestionnaireAnswer('whichmusicalinstrument', form.whichmusicalinstrument)">
       </label>
     </div>
     <div class="row">
       <label>
         {{ que.followdancelessonsyesno || '9)	Heeft u danslessen gevolgd?' }}
-        <input type="text" ng-model="form.followdancelessonsyesno" >
+        <input type="text" ng-model="form.followdancelessonsyesno" ng-change="addQuestionnaireAnswer('followdancelessonsyesno', form.followdancelessonsyesno)">
       </label>
     </div>
     <div class="row">
       <label>
         {{ que.yearsofdancelessons || '10) Zoja, hoeveel jaren les heeft u gehad?' }}
-        <input type="text" ng-model="form.yearsofdancelessons" >
+        <input type="text" ng-model="form.yearsofdancelessons" ng-change="addQuestionnaireAnswer('yearsofdancelessons', form.yearsofdancelessons)">
       </label>
     </div>
     <div class="row">
       <label>
         {{ que.hoursperdaymusiclistening || '11)	Hoeveel uren luistert u gemiddeld per dag naar muziek?' }}
-        <input type="text" ng-model="form.hoursperdaymusiclistening" >
+        <input type="text" ng-model="form.hoursperdaymusiclistening" ng-change="addQuestionnaireAnswer('hoursperdaymusiclistening', form.hoursperdaymusiclistening)">
       </label>
     </div>
     <div class="row">
       <label>
         {{ que.favoritemusicalgenre || '12)	Welke muziekgenre luistert u graag?' }}
-        <input type="text" ng-model="form.favoritemusicalgenre" >
+        <input type="text" ng-model="form.favoritemusicalgenre" ng-change="addQuestionnaireAnswer('favoritemusicalgenre', form.favoritemusicalgenre)">
       </label>
     </div>
-  </form>
 
-  <h3>{{ que.title_language || 'Taalachtergrond: ' }}</h3>
+    <h3>{{ que.title_language || 'Taalachtergrond: ' }}</h3>
 
-  <form>
     <div class="row">
       <label>
         {{ que.nativelanguage || '1)	Wat is uw moedertaal?' }}
-        <input type="text" ng-model="form.nativelanguage" >
+        <input type="text" ng-model="form.nativelanguage" ng-change="addQuestionnaireAnswer('nativelanguage', form.nativelanguage)">
       </label>
     </div>
     <div class="row">
       <label>
         {{ que.otherfluentlanguage || '2)	Welke andere taal spreekt u vloeind naast uw moedertaal?' }}
-        <input type="text" ng-model="form.otherfluentlanguage" >
+        <input type="text" ng-model="form.otherfluentlanguage" ng-change="addQuestionnaireAnswer('otherfluentlanguage', form.otherfluentlanguage)">
       </label>
     </div>
     <div class="row">
@@ -118,19 +116,19 @@
     <div class="row"  >
       <label>
         {{ que.ageotherfluentlanguage || '4)	Hoe oud was u toen u deze andere taal (talen) geleerd heeft?' }}
-        <input ng-model="form.ageotherfluentlanguage" type="text">
+        <input ng-model="form.ageotherfluentlanguage" type="text" ng-change="addQuestionnaireAnswer('ageotherfluentlanguage', form.ageotherfluentlanguage)">
       </label>
     </div>
     <div class="row">
       <label>
         {{ que.howoftenperweekusingnativelanguage || '5)	Hoe vaak per week gebruikt u uw moedertaal?' }}
-        <input type="text"  ng-model="form.howoftenperweekusingnativelanguage" >
+        <input type="text"  ng-model="form.howoftenperweekusingnativelanguage" ng-change="addQuestionnaireAnswer('howoftenperweekusingnativelanguage', form.howoftenperweekusingnativelanguage)">
       </label>
     </div>
     <div class="row" >
       <label>
         {{ que.howoftenperweekusingotherfluentlanguage || '6)	Hoe vaak per week gebruikt u deze andere taal (talen)?' }}
-        <input type="text"  ng-model="form.howoftenperweekusingotherfluentlanguage">
+        <input type="text"  ng-model="form.howoftenperweekusingotherfluentlanguage" ng-change="addQuestionnaireAnswer('howoftenperweekusingotherfluentlanguage', form.howoftenperweekusingotherfluentlanguage)">
       </label>
     </div>
   </form>
