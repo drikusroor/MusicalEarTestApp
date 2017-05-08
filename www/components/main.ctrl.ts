@@ -50,7 +50,8 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
       // rhythm7: 'different',
     },
     melody: {},
-    questionnaire: {
+    questionnaire: {},
+    participant: {
       participantNumber: ""
     }
   };
@@ -101,7 +102,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
       amountOfTrials: ConfigService.amountOfTrials
     }
 
-    data = collect(results.rhythm, results.melody, results.questionnaire, configObject);
+    data = collect(results.rhythm, results.melody, results.questionnaire, results.participant, configObject);
 
     var currentdate = new Date(),
         datetime = "Last Sync: " + currentdate.getDate() + "/"

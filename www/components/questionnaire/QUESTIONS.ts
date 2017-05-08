@@ -73,7 +73,7 @@ angular.module('ExperimentApp')
         title: 'Müzik ve Dil Geçmişi Anketi',
         subtitle: 'Bu anketi tamamladıktan sonra testteki performansınızı görebilirsiniz.',
         title_music: 'Müzik geçmişi',
-        birthdate: 'Doğum tarihi (Gün-ay-yıl)',
+        birthdate: '1) Doğum tarihi (Gün-ay-yıl)',
         sex: '2) Cinsiyet',
         education: '3) Tamamlanmış en yüksek eğitim seviyesi:',
         musiclessons: '4) Daha önce müzik dersi aldınız mı?',
