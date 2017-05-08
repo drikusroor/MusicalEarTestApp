@@ -1,7 +1,10 @@
 'use strict';
 angular.module('ExperimentApp')
 
-.controller('QuestionnaireCtrl', ['$scope', '$rootScope', '$state', '$stateParams', 'QUESTIONS', function ($scope, $rootScope, $state, $stateParams, QUESTIONS) {
+.controller('QuestionnaireCtrl', function ($scope, $rootScope, $state, $stateParams, ConfigService, QUESTIONS) {
+
+  $scope.que = QUESTIONS[ConfigService.language];
+  console.log('Questionnaire is ' + ConfigService.language, $scope.que);
 
   $scope.form = {};
 
@@ -16,4 +19,4 @@ angular.module('ExperimentApp')
     $scope.saveForm($scope.form);
   }
 
-}])
+})
