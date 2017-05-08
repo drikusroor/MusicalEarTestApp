@@ -70,7 +70,71 @@ angular.module('ExperimentApp')
         gotoresults: 'Ga naar de resultaten'
     },
     TR: {
-
+        title: 'Müzik ve Dil Geçmişi Anketi',
+        subtitle: 'Bu anketi tamamladıktan sonra testteki performansınızı görebilirsiniz.',
+        title_music: 'Müzik geçmişi',
+        birthdate: 'Doğum tarihi (Gün-ay-yıl)',
+        sex: '2) Cinsiyet',
+        education: '3) Tamamlanmış en yüksek eğitim seviyesi:',
+        musiclessons: '4) Daha önce müzik dersi aldınız mı?',
+        yearsofmusiclessons: '5) Eğer daha önce müzik dersi aldıysanız, kaç yıl ders aldınız?',
+        ageofmusiclessonsstart: '6) Eğer daha önce müzik dersi aldıysanız, bu dersi alırken kaç yaşındaydınız?',
+        playmusicalinstrumentyesno: '7) Bir müzik aleti çalıyor musunuz?',
+        whichmusicalinstrument: '8) Eğer bir önceki soruya yanıtınız evet ise, hangi müzik aletini çalıyorsunuz?',
+        followdancelessonsyesno: '9) Daha önce dans dersi aldınız mı?',
+        yearsofdancelessons: '10) Eğer daha önce dans dersi aldıysanız, kaç yıl ders aldınız?',
+        hoursperdaymusiclistening: '11) Ortalama olarak bir günde kaç saat müzik dinliyorsunuz?',
+        favoritemusicalgenre: '12) Hangi müzik türlerini dinlemekten hoşlanırsınız?',
+        title_language: 'Dil anketi',
+        nativelanguage: '1) Ana diliniz nedir?',
+        otherfluentlanguage: '2) Ana diliniz dışında hangi dil(ler)i akıcı olarak konuşuyorsunuz?',
+        skilllevelotherfluentlanguage: '3) Bu dil(ler)deki becerileriniz ana dilinizle kıyaslandığında nasıldır?',
+        skilllevelotherfluentlanguageAnswers: [
+            {
+                value: '10',
+                answer: '10: Ana dilim kadar iyi',
+            },
+            {
+                value: '9',
+                answer: '9: Neredeyse ana dilim kadar iyi',
+            },
+            {
+                value: '8',
+                answer: '8: Çok iyi, ancak ana dilim kadar iyi değil',
+            },
+            {
+                value: '7',
+                answer: '7: Oldukça iyi',
+            },
+            {
+                value: '6',
+                answer: '6: Ortalama',
+            },
+            {
+                value: '5',
+                answer: '5: Ortalama',
+            },
+            {
+                value: '4',
+                answer: '4: Başlangıç seviyesinde',
+            },
+            {
+                value: '3',
+                answer: '3: Başlangıç seviyesinde',
+            },
+            {
+                value: '2',
+                answer: '2: Temel seviyede',
+            },
+            {
+                value: '1',
+                answer: '1: Temel seviyede'
+            }
+        ],
+        ageotherfluentlanguage: '4)	İkinci dilinizi öğrendiğinizde kaç yaşındaydınız?',
+        howoftenperweekusingnativelanguage: '5)	Hoe vaak per week gebruikt u uw moedertaal?',
+        howoftenperweekusingotherfluentlanguage: '6) İkinci dilinizi bir hafta içinde ne sıklıkta kullanıyorsunuz?',
+        gotoresults: 'Sonuçlara gidin'
     },
     EN: {
 
