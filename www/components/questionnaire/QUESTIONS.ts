@@ -132,7 +132,7 @@ angular.module('ExperimentApp')
             }
         ],
         ageotherfluentlanguage: '4)	İkinci dilinizi öğrendiğinizde kaç yaşındaydınız?',
-        howoftenperweekusingnativelanguage: '5)	Hoe vaak per week gebruikt u uw moedertaal?',
+        howoftenperweekusingnativelanguage: '5)	Bir hafta içinde ana dilinizi ne sıklıkta kullanıyorsunuz?',
         howoftenperweekusingotherfluentlanguage: '6) İkinci dilinizi bir hafta içinde ne sıklıkta kullanıyorsunuz?',
         gotoresults: 'Sonuçlara gidin'
     },
