@@ -17,10 +17,10 @@
 <div class="surveyquestion radiobuttons">
   <ul class="button-group">
     <li>
-      <button class="" ui-sref="rhythm({trial: 1})" ng-show="lang == 'NL'">
+      <button class="" ui-sref="rhythm({trial: 1})" ng-show="configService.language === 'NL'">
         Begin het ritmisch gedeelte van de test!
       </button>
-      <button class="" ui-sref="rhythm({trial: 1})" ng-show="lang == 'TR'">
+      <button class="" ui-sref="rhythm({trial: 1})" ng-show="configService.language === 'TR'">
         Teste başlayın
       </button>
     </li>
