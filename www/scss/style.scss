@@ -37,10 +37,19 @@ h3 {
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   position: relative;
   padding-top: 50px;
-  padding-bottom: 50px; }
-  @media (max-width: 768px) {
-    .exp-container {
-      width: 100%; } }
+  padding-bottom: 50px; 
+
+  & > section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .exp-container {
+    width: 100%; 
+  } 
+}
 
 .tekstblok {
   padding: 50px;
@@ -146,7 +155,7 @@ li.correct, li.incorrect {
 audio {
   display: table-cell;
   margin: auto;
-  padding-top: 100px; }
+}
 
 .textfieldcenter {
   margin: auto;
