@@ -5,15 +5,12 @@ var bower = require('bower');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var gulpMinify = require('gulp-minify');
-var minifyCss = require('gulp-minify-css');
-var rename = require('gulp-rename');
 var sh = require('shelljs');
-var runSequence = require('gulp-run-sequence');
+var runSequence = require('run-sequence');
 var ts = require('gulp-typescript');
 
 var mainBowerFiles = require('gulp-main-bower-files');
 var clean = require('gulp-clean');
-var jshint = require('gulp-jshint');
 var gulpFilter = require('gulp-filter');
 
 var sourcePath = './www/';
@@ -49,7 +46,6 @@ gulp.task('sass', function () {
 gulp.task('scripts', function () {
   return gulp.src([sourcePath + 'app.js', sourcePath + '**/*/*.js'])
     .pipe(concat('bundle.js'))
-    //.pipe(gulpMinify())
     .pipe(gulp.dest(buildPath))
     .pipe(connect.reload());
 });
