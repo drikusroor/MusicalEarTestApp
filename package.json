@@ -24,7 +24,7 @@
     "gulp-filter": "^5.0.0",
     "gulp-minify": "^3.1.0",
     "gulp-rename": "^1.2.0",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^4.0.2",
     "gulp-typescript": "^4.0.2",
     "gulp-util": "^2.2.14",
     "run-sequence": "^2.2.1",
