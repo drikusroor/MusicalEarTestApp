@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
+    "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.2.0",
-    "gulp-connect": "^5.0.0",
+    "gulp-connect": "^5.7.0",
     "gulp-filter": "^5.0.0",
     "gulp-jshint": "^2.0.4",
     "gulp-main-bower-files": "^1.6.1",
