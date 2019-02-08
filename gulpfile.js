@@ -8,8 +8,7 @@ var gulpMinify = require('gulp-minify');
 var sh = require('shelljs');
 var runSequence = require('run-sequence');
 var ts = require('gulp-typescript');
-
-var mainBowerFiles = require('gulp-main-bower-files');
+var filesExist = require('files-exist')
 var clean = require('gulp-clean');
 var gulpFilter = require('gulp-filter');
 
@@ -59,19 +58,23 @@ gulp.task('ts', function () {
     .pipe(gulp.dest(buildPath));
 });
 
-
-gulp.task('main-bower-files', function () {
+gulp.task('vendor-scripts', function () {
   var jsFilter = gulpFilter('**/*/*.js', { restore: true });
   var cssFilter = gulpFilter('**/*/*.css')
-  return gulp.src('./bower.json')
-    .pipe(mainBowerFiles())
-    .pipe(jsFilter)
-    .pipe(concat('vendor.js'))
-    .pipe(gulpMinify())
-    .pipe(gulp.dest(buildPath + 'libs'))
-    .pipe(jsFilter.restore)
-    .pipe(cssFilter)
-    .pipe(gulp.dest(buildPath + 'assets/style/'))
+  return gulp.src(filesExist([
+    "./node_modules/jquery/dist/jquery.min.js",
+    "./node_modules/foundation-sites/js/foundation.min.js",
+    "./node_modules/angular/angular.min.js",
+    "./node_modules/@uirouter/angularjs/release/angular-ui-router.min.js",
+    "./node_modules/angular-ui-event/dist/event.min.js",
+    "./node_modules/angular-resource/angular-resource.min.js",
+  ]))
+  .pipe(concat('vendor.js'))
+  .pipe(gulpMinify())
+  .pipe(gulp.dest(buildPath + 'libs'))
+  .pipe(jsFilter.restore)
+  .pipe(cssFilter)
+  .pipe(gulp.dest(buildPath + 'assets/style/'))
 });
 
 gulp.task('audio', function () {
@@ -93,7 +96,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default', function (cb) {
-  runSequence('clean', ['connect', 'sass', 'ts', 'assets', 'audio', 'main-bower-files'], 'watch');
+  runSequence('clean', ['connect', 'sass', 'ts', 'assets', 'audio', 'vendor-scripts'], 'watch');
 })
 
 gulp.task('install', ['git-check'], function () {

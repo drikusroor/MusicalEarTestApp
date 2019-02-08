@@ -1,12 +1,8 @@
 'use strict';
 angular.module('ExperimentApp', [
-
   'ui.router',
   'ui.event',
   'ngResource'
-
-
-  // 'ui.rCalendar'
 ])
 .config(['$stateProvider', '$urlRouterProvider', '$resourceProvider', function($stateProvider, $urlRouterProvider, $resourceProvider) {
 
